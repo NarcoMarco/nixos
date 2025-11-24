@@ -12,5 +12,6 @@
     ./environment.nix
     ./rofi.nix
     ./kitty.nix
+    ./neovim.nix
   ];
 }

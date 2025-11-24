@@ -20,6 +20,8 @@
     pkgs.catimg
     pkgs.waypaper
     pkgs.matugen
+    pkgs.imagemagick
     pkgs.libadwaita
+    pkgs.luarocks
   ];
 }

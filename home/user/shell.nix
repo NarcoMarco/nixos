@@ -12,7 +12,7 @@
 	source ~/.p10k.zsh
 	clear
 	#fastfetch
-	/etc/nixos/home/config/fastfetch/random.sh | fastfetch --file-raw -
+	/home/marco/git-repos/mine/nixos/home/config/fastfetch/random.sh | fastfetch --file-raw -
 	
 	#wal -i /ai.jpg -q
 	cat ~/.cache/wal/sequences

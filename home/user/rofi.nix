@@ -24,6 +24,6 @@
       window-format = "{w} · {c} · {t}";
     };
 
-    theme = "/etc/nixos/home/config/rofi/config.rasi";
+    theme = "/home/marco/git-repos/mine/nixos/home/config/rofi/config.rasi";
   };
 }
