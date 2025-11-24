@@ -1,14 +1,5 @@
 require("config.lazy")
 
-if os.getenv('NIX_NEOVIM') == '1' then
-  local servers = require('plugins.lsp.servers').servers(on_attach, capabilities)
-  for _, v in pairs(servers) do
-    v()
-  end
-else
-  local mason_config = require('mason-lspconfig')
-  mason_config.setup()
-
 -- Enable relative line numbers  
 vim.opt.relativenumber = true  
 vim.opt.number = true

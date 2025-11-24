@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Image directory
-IMAGE_DIR="/home/marco/git-repos/nixos/home/config/fastfetch/miku"
+IMAGE_DIR="/home/marco/git-repos/mine/nixos/home/config/fastfetch/miku"
 
 # Find a random image file
 RANDOM_IMAGE=$(find "$IMAGE_DIR" -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.gif" -o -iname "*.bmp" -o -iname "*.webp" \) | shuf -n 1)
