@@ -1,4 +1,24 @@
+
 require("config.lazy")
+
+-- lsp servers
+vim.lsp.enable({
+	-- lua
+	"luals",
+	-- nix
+	"nil_ls",
+	"nixd",
+	-- python
+	"pyright",
+	-- markdown
+	"ltex",
+	-- yaml
+	"yamlls",
+	--bash
+	"bashls",
+	--java
+	"jdtls"
+})
 
 -- Enable relative line numbers  
 vim.opt.relativenumber = true  

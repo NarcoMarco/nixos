@@ -23,5 +23,6 @@
     pkgs.imagemagick
     pkgs.libadwaita
     pkgs.luarocks
+	pkgs.grimblast
   ];
 }

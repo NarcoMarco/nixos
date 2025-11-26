@@ -111,7 +111,7 @@
         kb_layout = "us, de";
 	kb_variant = "";
 	kb_model = "";
-	kb_options = "grp:alt_space_toggle,capse:escape";
+	kb_options = "grp:alt_space_toggle,caps:escape";
 	kb_rules = "";
 
 	follow_mouse = 1;
@@ -229,5 +229,92 @@
         "suppressevent maximize, class:.*" # You'll probably like this.
       ];
     };
+  };
+
+  services.hypridle = {
+    enable = true;
+
+	settings = {
+	  general = {
+	    lock_cmd = "pidof hyprlock || hyprlock";
+		before_sleep_cmd = "loginctl lock-session";
+		after_sleep_cmd = "hyprctl dispatch dpms on";
+	  };
+
+	  listener = [
+		{	
+	      timeout = 150;
+		  on-timeout = "brightnessctl -s set 10%";
+		  on-resume = "brightnessctl -r";
+		}
+		{
+		  timeout = 600;
+		  on-timeout = "loginctl lock-session";
+		}
+		{
+		  timeout = 660;
+		  on-timeout = "hyprctl dispatch dpms off";
+		  on-resume = "hyprctl dispatch dpms on";
+		}
+		{
+		  timeout = 1800;
+		  on-timeout = "systemctl suspend";
+		}
+	  ];
+	};
+  };
+
+  # Hyprlock
+  programs.hyprlock = {
+    enable = true;
+
+	sourceFirst = true;
+
+	settings = {
+	  source = [    
+	    "$HOME/.cache/wal/colors-hyprland.conf"
+	  ];
+
+	  general = {
+	    hide_cursor = false;
+	  };
+
+	  background = {
+	    path = "screenshot";
+	    blur_passes = 2;
+	    contrast = 1;
+	    brightness = 0.75;
+	    vibrancy = 0.2;
+	    vibrancy_darkness = 0.2;
+	  };
+
+	  input-field = {
+	    size = "250, 60";
+	    outline_thickness = 2;
+	    dots_size = 0.2;
+	    dots_spacing = 0.35;
+	    dots_center = true;
+	    outer_color = "rgba(0, 0, 0, 0)";
+	    inner_color = "rgba(0, 0, 0, 0.5)";
+	    font_color = "$foreground";
+	    fade_on_empty = false;
+	    rouding = -1;
+	    check_color = "rgb(204, 136, 34)";
+	    placeholder_text = ''<i><span foreground="##cdd6f4">Input Password...</span></i>'';
+	    hide_input = false;
+	    halign = "center";
+	    valign = "center";
+	  };
+
+	  label = {
+	    text = ''cmd[update:1000] echo "$(date +"%-I:%M")"'';
+	    color = "$foreground";
+	    font_size = 95;
+	    font_family = "JetBrains Mono Extrabold";
+	    position = "0, 200";
+	    halign = "center";
+	    valign = "center";
+	  };	
+	};
   };
 }

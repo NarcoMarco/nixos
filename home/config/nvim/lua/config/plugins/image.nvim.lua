@@ -5,6 +5,7 @@ return{
 	    require("image").setup({
             backend = "kitty",
             processor = "magick_rock", -- or "magick_cli"
+            -- processor = "magick_cli", -- or "magick_cli"
             integrations = {
               markdown = {
                 enabled = true,
@@ -27,6 +28,7 @@ return{
 		download_remote_images = true,
 		clear_in_insert_mode = true,
 		only_render_image_at_cursor = true,
+		only_render_image_at_cursor_mode = "inline",
 		floating_windows = true,
               },
               css = {

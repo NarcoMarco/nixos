@@ -1,4 +1,7 @@
 { config, pkgs, ... }:
+let
+  initFile = builtins.readFile ../config/nvim/init.lua;
+in
 {
   programs.neovim = {
     enable = true;
@@ -17,6 +20,12 @@
 	  lua-language-server
 	  nil
 	  nixd
+	  pyright
+	  ltex-ls
+	  yaml-language-server
+	  bash-language-server
+	  jdt-language-server
+
 
 	  # Formatters
 	  nixpkgs-fmt
@@ -24,5 +33,7 @@
 	];
 
     extraLuaPackages = luaPkgs: with luaPkgs; [ magick ];
+
+	extraLuaConfig = initFile;
   };
 }

@@ -8,5 +8,10 @@
     rofi = {
       enable = false;
     };
+
+	hyprlock = {
+	  enable = false;
+	  useDefaultConfig = false;
+	};
   };
 }

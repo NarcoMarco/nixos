@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     btop
+	fprintd
     git
     gnumake
     lm_sensors
