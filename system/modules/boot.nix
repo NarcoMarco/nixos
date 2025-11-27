@@ -17,5 +17,11 @@
       };
       timeout = 300;
     };
+    
+	plymouth = {
+	  enable = true;
+	  themePackages = [ pkgs.mikuboot ];
+	  theme = "mikuboot";
+	};
   };
 }

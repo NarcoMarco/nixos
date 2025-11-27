@@ -15,9 +15,24 @@
 
     catppuccin.url = "github:catppuccin/nix/release-25.05";
 
+	# zen browser community flake
+	zen-browser = {
+	  url = "github:0xc000022070/zen-browser-flake";
+	  inputs = {
+	    nixpkgs.follows = "nixpkgs";
+	    home-manager.follows = "home-manager";
+	  };
+	};
+
+	# mikuboot
+	mikuboot = {
+	  url = "gitlab:evysgarden/mikuboot";
+	  inputs.nixpkgs.follows = "";
+	};
+
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, hyprland, catppuccin, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, hyprland, catppuccin, zen-browser, mikuboot, ... }@inputs:
   let
     lib = nixpkgs.lib;
     system = "x86_64-linux";
@@ -30,18 +45,20 @@
       inherit system;
       modules = [
         ./system/configuration.nix
+	    mikuboot.nixosModules.default
 
-	home-manager.nixosModules.home-manager {
-	  home-manager.useGlobalPkgs = true;
-	  home-manager.useUserPackages = true;
+	    home-manager.nixosModules.home-manager {
+	      home-manager.useGlobalPkgs = true;
+	      home-manager.useUserPackages = true;
 
-	  home-manager.users.marco = {
-	    imports = [
-	      ./home/default.nix
-	      catppuccin.homeModules.catppuccin
-	    ];
-	  };
-	}
+	      home-manager.users.marco = {
+	        imports = [
+	          ./home/default.nix
+	          catppuccin.homeModules.catppuccin
+	    	  zen-browser.homeModules.default
+	        ];
+	      };
+	    }
       ];
 
       specialArgs = {

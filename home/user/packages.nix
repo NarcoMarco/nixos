@@ -24,5 +24,6 @@
     pkgs.libadwaita
     pkgs.luarocks
 	pkgs.grimblast
+	pkgs.bitwarden-desktop
   ];
 }
