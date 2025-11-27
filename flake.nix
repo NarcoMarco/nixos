@@ -46,6 +46,7 @@
       modules = [
         ./system/configuration.nix
 	    mikuboot.nixosModules.default
+		catppuccin.nixosModules.catppuccin
 
 	    home-manager.nixosModules.home-manager {
 	      home-manager.useGlobalPkgs = true;
