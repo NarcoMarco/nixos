@@ -9,6 +9,8 @@
       enable = false;
     };
 
+	delta.enable = false;
+
 	hyprlock = {
 	  enable = false;
 	  useDefaultConfig = false;

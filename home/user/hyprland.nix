@@ -124,9 +124,9 @@
 	};
       };
 
-      gestures = {
-        workspace_swipe = false;
-      };
+      # gestures = {
+      #   workspace_swipe = false;
+      # };
 
       bind = [
         "$mainMod, Return, exec, $terminal"

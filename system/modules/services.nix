@@ -18,8 +18,14 @@
 	};
 
 	displayManager = {
-		sddm.enable = true;
-                sddm.theme = "${import ./sddm-theme.nix { inherit pkgs; }}";
+		sddm = {
+		  enable = true;
+		  package = pkgs.kdePackages.sddm;
+          theme = "${import ./sddm-theme.nix { inherit pkgs; }}";
+		  extraPackages = with pkgs.kdePackages; [
+		    qtmultimedia
+		  ];
+		};
 	};
 
 	fprintd = {
