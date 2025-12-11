@@ -17,7 +17,9 @@ vim.lsp.enable({
 	--bash
 	"bashls",
 	--java
-	"jdtls"
+	"jdtls",
+	--qml
+	"qmlls"
 })
 
 -- Enable relative line numbers  
@@ -50,8 +52,8 @@ vim.opt.conceallevel = 3
 vim.cmd('call webdevicons#refresh()')
 
 -- Set Tab Width to 4
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })

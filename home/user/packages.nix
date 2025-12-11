@@ -23,7 +23,8 @@
     pkgs.imagemagick
     pkgs.libadwaita
     pkgs.luarocks
-	pkgs.grimblast
-	pkgs.bitwarden-desktop
+		pkgs.grimblast
+		pkgs.bitwarden-desktop
+		pkgs.spotify
   ];
 }

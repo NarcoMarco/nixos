@@ -4,7 +4,7 @@
     ./git.nix
     ./gtk.nix
     ./hyprland.nix
-    ./hyprpanel.nix
+    # ./hyprpanel.nix
     ./shell.nix
     ./config.nix
     ./packages.nix
@@ -13,5 +13,6 @@
     ./rofi.nix
     ./kitty.nix
     ./neovim.nix
+		./ashell.nix
   ];
 }

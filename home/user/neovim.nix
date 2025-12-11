@@ -25,7 +25,7 @@ in
 	  yaml-language-server
 	  bash-language-server
 	  jdt-language-server
-
+		kdePackages.qtdeclarative
 
 	  # Formatters
 	  nixpkgs-fmt
@@ -34,6 +34,12 @@ in
 
     extraLuaPackages = luaPkgs: with luaPkgs; [ magick ];
 
-	extraLuaConfig = initFile;
+	  extraLuaConfig = initFile;
+
   };
+
+	home.packages = [
+	  pkgs.kdePackages.qtdeclarative
+	];
+
 }

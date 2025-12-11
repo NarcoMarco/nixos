@@ -12,6 +12,7 @@ in
 	  source = "${configDir}/nvim/lsp";
 	};
 
+
     ".config/wallpapers".source = "${configDir}/wallpapers/";
     ".config/waypaper".source = "${configDir}/waypaper/";
     # ".config/btop".source = "${configDir}/btop";
