@@ -30,9 +30,13 @@
 	  inputs.nixpkgs.follows = "";
 	};
 
+	spicetify-nix = {
+		url = "github:Gerg-L/spicetify-nix";
+	};
+
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, hyprland, catppuccin, zen-browser, mikuboot, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, hyprland, catppuccin, zen-browser, mikuboot, spicetify-nix, ... }@inputs:
   let
     lib = nixpkgs.lib;
     system = "x86_64-linux";
@@ -46,17 +50,21 @@
       modules = [
         ./system/configuration.nix
 	    mikuboot.nixosModules.default
-		catppuccin.nixosModules.catppuccin
+		  catppuccin.nixosModules.catppuccin
 
 	    home-manager.nixosModules.home-manager {
 	      home-manager.useGlobalPkgs = true;
 	      home-manager.useUserPackages = true;
 
 	      home-manager.users.marco = {
+			    _module.args = {
+			      inputs = inputs;
+			    };
 	        imports = [
 	          ./home/default.nix
 	          catppuccin.homeModules.catppuccin
-	    	  zen-browser.homeModules.default
+	    	    zen-browser.homeModules.default
+						spicetify-nix.homeManagerModules.default
 	        ];
 	      };
 	    }
@@ -64,7 +72,7 @@
 
       specialArgs = {
         inherit pkgs-unstable;
-	    inherit inputs;
+	      inherit inputs;
       };
     };
   };

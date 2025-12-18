@@ -8,6 +8,8 @@
       python-pkgs.requests
     ]))
 
+		pkgs.bottles
+		pkgs.yad
     pkgs.obsidian
     pkgs.vlc
     pkgs.catppuccin
@@ -25,6 +27,6 @@
     pkgs.luarocks
 		pkgs.grimblast
 		pkgs.bitwarden-desktop
-		pkgs.spotify
+		# pkgs.spotify
   ];
 }

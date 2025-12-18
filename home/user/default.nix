@@ -14,5 +14,7 @@
     ./kitty.nix
     ./neovim.nix
 		./ashell.nix
+		./spicetify.nix
+		./vesktop.nix
   ];
 }

@@ -39,6 +39,11 @@
 
 		  enable_esc_key = true;
 
+			keyboard_layout.labels = {
+			  "English (US)" = "EN";
+				"German" = "DE";
+			};
+
 			settings = {
       	lock_cmd = "hyprlock";
       	audio_sinks_more_cmd = "pavucontrol -t 3";
