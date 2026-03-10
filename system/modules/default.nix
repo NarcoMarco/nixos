@@ -3,7 +3,7 @@
 {
   imports = [
     ./boot.nix
-	./catppuccin.nix
+		./catppuccin.nix
     ./fonts.nix
     ./gaming.nix
     ./hardware.nix

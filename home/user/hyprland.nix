@@ -11,7 +11,8 @@
 
       monitor = [
         "eDP-1, 1920x1200@60, 0x0, 1"
-	"monitor = , preferred, auto, auto"
+				"HDMI-A-1, 3840x2160@60, 0x-2160, 1, bitdepth, 10, cm, hdr"
+				", preferred, auto, auto"
       ];
 
       "$mainMod" = "SUPER";
@@ -22,81 +23,85 @@
 
       exec-once = [
         "dbus-update-activation-environment -- systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-	"waypaper --restore"
-	# "hyprpanel"
-	"ashell"
-	"hypridle"
-	"playerctld"
+				"waypaper --restore"
+				# "hyprpanel"
+				# "ashell"
+				"qs"
+				"hypridle"
+				"playerctld"
       ];
 
       env = [
         "QT_QPA_PLATFORMTHEME,qt6ct"
-	"QT_QPA_PLATFORM=wayland"
+				"QT_QPA_PLATFORM=wayland"
 
         "XCURSOR_SIZE, 24"
-	"HYPRCURSOR_SIZE, 24"
+				"HYPRCURSOR_SIZE, 24"
       ];
 
       exec = [
         "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'" # for GTK4 apps
 
-	"gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'" # for GTK3 apps
+				"gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'" # for GTK3 apps
       ];
 
       general = {
         gaps_in = 0;
-	gaps_out = 0;
+				gaps_out = 0;
 
-	border_size = 1;
+				border_size = 2;
 
-	resize_on_border = false;
+				"col.active_border" = "0xffb4befe 0xffb4befe 0deg";
+				"col.inactive_border" = "0xff11111b";
 
-	allow_tearing = false;
+				resize_on_border = false;
 
-	layout = "dwindle";
+				allow_tearing = false;
+
+				layout = "dwindle";
       };
 
       decoration = {
-        rounding = 5;
+        rounding = 15;
 
-	active_opacity = "1.0";
-	inactive_opacity = "0.9";
+				active_opacity = "1.0";
+				inactive_opacity = "0.9";
 
-	shadow = {
-	  enabled = false;
-	};
+				shadow = {
+				  enabled = false;
+				};
+			
+				blur = {
+				  enabled = false;
+				  size = 3;
+				  passes = 1;
+			
+				  vibrancy = "0.1696";
+				};
+			      };
+			
+			      animations = {
+			        enabled = true;
+			
+				bezier = [
+				  "myBezier, 0.05, 0.9, 0.1, 1.05"
+				];
 
-	blur = {
-	  enabled = true;
-	  size = 3;
-	  passes = 1;
-
-	  vibrancy = "0.1696";
-	};
-      };
-
-      animations = {
-        enabled = true;
-
-	bezier = [
-	  "myBezier, 0.05, 0.9, 0.1, 1.05"
-	];
-
-	animation = [
-	  "windows, 1, 7, myBezier"
-	  "windowsOut, 1, 7, default, popin 80%"
-	  "border, 1, 10, default"
-	  "borderangle, 1, 8, default"
-	  "fade, 1, 7, default"
-	  "workspaces, 1, 6, default"
-	];
+				animation = [
+				  "windows, 1, 7, myBezier"
+				  "windowsOut, 1, 7, default, popin 80%"
+				  "border, 1, 10, default"
+				  "borderangle, 1, 8, default"
+				  "fade, 1, 7, default"
+				  "workspaces, 1, 6, default"
+				];
       };
 
       dwindle = {
         pseudotile = false;
-	preserve_split = true;
-	force_split = 2;
-	permanent_direction_override = true;
+				preserve_split = true;
+				force_split = 2;
+				permanent_direction_override = true;
       };
 
       master = {
@@ -105,29 +110,32 @@
 
       misc = {
         force_default_wallpaper = -1;
-	disable_hyprland_logo = false;
+				disable_hyprland_logo = false;
       };
 
       input = {
         kb_layout = "us, de";
-	kb_variant = "";
-	kb_model = "";
-	kb_options = "grp:alt_space_toggle,caps:escape";
-	kb_rules = "";
+				kb_variant = "";
+				kb_model = "";
+				kb_options = "grp:alt_space_toggle,caps:escape";
+				kb_rules = "";
 
-	follow_mouse = 1;
+				follow_mouse = 1;
 
-	sensitivity = 0;
+				sensitivity = 0;
 
-	touchpad = {
-	  natural_scroll = true;
-	  middle_button_emulation = true;
-	};
+				touchpad = {
+				  natural_scroll = true;
+				  middle_button_emulation = true;
+				};
       };
 
       # gestures = {
       #   workspace_swipe = false;
       # };
+			gesture = [
+				"4, horizontal, workspace"
+			];
 
       bind = [
         "$mainMod, Return, exec, $terminal"
@@ -157,43 +165,46 @@
         "$mainMod SHIFT, down, swapwindow, d"
         "$mainMod SHIFT, up, swapwindow, u"
 
-	", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+				", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
 
         # Switch workspaces with mainMod + [0-9]
-        "bind = $mainMod, 1, workspace, 1"
-        "bind = $mainMod, 2, workspace, 2"
-        "bind = $mainMod, 3, workspace, 3"
-        "bind = $mainMod, 4, workspace, 4"
-        "bind = $mainMod, 5, workspace, 5"
-        "bind = $mainMod, 6, workspace, 6"
-        "bind = $mainMod, 7, workspace, 7"
-        "bind = $mainMod, 8, workspace, 8"
-        "bind = $mainMod, 9, workspace, 9"
-        "bind = $mainMod, 0, workspace, 10"
+        "$mainMod, 1, workspace, 1"
+        "$mainMod, 2, workspace, 2"
+        "$mainMod, 3, workspace, 3"
+        "$mainMod, 4, workspace, 4"
+        "$mainMod, 5, workspace, 5"
+        "$mainMod, 6, workspace, 6"
+        "$mainMod, 7, workspace, 7"
+        "$mainMod, 8, workspace, 8"
+        "$mainMod, 9, workspace, 9"
+        "$mainMod, 0, workspace, 10"
 
         # Move active window to a workspace with mainMod + SHIFT + [0-9]
-        "bind = $mainMod SHIFT, 1, movetoworkspace, 1"
-        "bind = $mainMod SHIFT, 2, movetoworkspace, 2"
-        "bind = $mainMod SHIFT, 3, movetoworkspace, 3"
-        "bind = $mainMod SHIFT, 4, movetoworkspace, 4"
-        "bind = $mainMod SHIFT, 5, movetoworkspace, 5"
-        "bind = $mainMod SHIFT, 6, movetoworkspace, 6"
-        "bind = $mainMod SHIFT, 7, movetoworkspace, 7"
-        "bind = $mainMod SHIFT, 8, movetoworkspace, 8"
-        "bind = $mainMod SHIFT, 9, movetoworkspace, 9"
-        "bind = $mainMod SHIFT, 0, movetoworkspace, 10"
+        "$mainMod SHIFT, 1, movetoworkspace, 1"
+        "$mainMod SHIFT, 2, movetoworkspace, 2"
+        "$mainMod SHIFT, 3, movetoworkspace, 3"
+        "$mainMod SHIFT, 4, movetoworkspace, 4"
+        "$mainMod SHIFT, 5, movetoworkspace, 5"
+        "$mainMod SHIFT, 6, movetoworkspace, 6"
+        "$mainMod SHIFT, 7, movetoworkspace, 7"
+        "$mainMod SHIFT, 8, movetoworkspace, 8"
+        "$mainMod SHIFT, 9, movetoworkspace, 9"
+        "$mainMod SHIFT, 0, movetoworkspace, 10"
 
 	
         # Example special workspace (scratchpad)
-        "bind = $mainMod, S, togglespecialworkspace, magic"
-        "bind = $mainMod SHIFT, S, movetoworkspace, special:magic"
+        "$mainMod, S, togglespecialworkspace, magic"
+        "$mainMod SHIFT, S, movetoworkspace, special:magic"
         
         # Scroll through existing workspaces with mainMod + scroll
-        "bind = $mainMod, mouse_down, workspace, e+1"
-        "bind = $mainMod, mouse_up, workspace, e-1"
+        "$mainMod, mouse_down, workspace, e+1"
+        "$mainMod, mouse_up, workspace, e-1"
 
-	# Lid Shut
-	",switch:on:Lid Switch,exec,hyprlock"
+				", PRINT, exec, grimblast copysave area"
+				"$mainMod_SHIFT, PRINT, exec, grimblast copysave screen"
+
+				# Lid Shut
+				",switch:on:Lid Switch,exec,hyprlock"
       ];
 
       bindm = [

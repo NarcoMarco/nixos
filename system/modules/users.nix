@@ -10,6 +10,7 @@
       "kvm"
       "libvirtd"
       "networkmanager"
+			"dialout"
     ];
   };
 }

@@ -28,5 +28,13 @@
 		pkgs.grimblast
 		pkgs.bitwarden-desktop
 		# pkgs.spotify
+		# pkgs.papirus-icon-theme
+		pkgs.kora-icon-theme
+		pkgs.localsend
+		pkgs.moonlight-qt
+		pkgs.calibre
+		pkgs.arduino-ide
+		pkgs.haskell.compiler.ghcHEAD
+		pkgs.cmatrix
   ];
 }

@@ -13,7 +13,7 @@
     hyprpaper
     kitty
     libnotify
-    mako
+    # mako
     qt5.qtwayland
     qt6.qtwayland
     hypridle

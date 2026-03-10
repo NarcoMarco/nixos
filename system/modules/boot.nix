@@ -2,7 +2,7 @@
 
 {
   boot = {
-    kernelParams = ["nohibernate" "ipv6.disable=1"];
+    kernelParams = [ "ipv6.disable=1" "quiet" "splash" "vt.global_cursor_default=0" ];
     tmp.cleanOnBoot = true;
     supportedFilesystems = ["ntfs"];
     loader = {
@@ -15,13 +15,13 @@
         enable = true;
         useOSProber = true;
       };
-      timeout = 300;
+      timeout = 15;
     };
     
-	plymouth = {
-	  enable = true;
-	  themePackages = [ pkgs.mikuboot ];
-	  theme = "mikuboot";
-	};
+		plymouth = {
+			enable = true;
+			themePackages = [ pkgs.mikuboot ];
+			theme = "mikuboot";
+		};
   };
 }

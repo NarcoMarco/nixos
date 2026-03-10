@@ -19,7 +19,9 @@ vim.lsp.enable({
 	--java
 	"jdtls",
 	--qml
-	"qmlls"
+	"qmlls",
+	--typescript
+	"ts_ls"
 })
 
 -- Enable relative line numbers  

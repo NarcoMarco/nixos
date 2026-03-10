@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     btop
-	fprintd
+		fprintd
     git
     gnumake
     lm_sensors
@@ -11,7 +11,7 @@
     libsForQt5.qt5.qtgraphicaleffects
     libsForQt5.qt5.qtsvg
     kdePackages.qt5compat
-	kdePackages.qtmultimedia
+		kdePackages.qtmultimedia
     lua51Packages.lua
     fastfetch
     gsettings-desktop-schemas
@@ -28,5 +28,7 @@
     xdg-desktop-portal-wlr
     zip
     zoxide
+
+		mesa
   ];
 }

@@ -15,24 +15,24 @@
 
     catppuccin.url = "github:catppuccin/nix/release-25.05";
 
-	# zen browser community flake
-	zen-browser = {
-	  url = "github:0xc000022070/zen-browser-flake";
-	  inputs = {
-	    nixpkgs.follows = "nixpkgs";
-	    home-manager.follows = "home-manager";
-	  };
-	};
+		# zen browser community flake
+		zen-browser = {
+			url = "github:0xc000022070/zen-browser-flake";
+			inputs = {
+				nixpkgs.follows = "nixpkgs";
+				home-manager.follows = "home-manager";
+			};
+		};
 
-	# mikuboot
-	mikuboot = {
-	  url = "gitlab:evysgarden/mikuboot";
-	  inputs.nixpkgs.follows = "";
-	};
+		# mikuboot
+		mikuboot = {
+			url = "gitlab:evysgarden/mikuboot";
+			inputs.nixpkgs.follows = "";
+		};
 
-	spicetify-nix = {
-		url = "github:Gerg-L/spicetify-nix";
-	};
+		spicetify-nix = {
+			url = "github:Gerg-L/spicetify-nix";
+		};
 
   };
 

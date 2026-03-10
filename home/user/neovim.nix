@@ -27,6 +27,10 @@ in
 	  jdt-language-server
 		kdePackages.qtdeclarative
 
+		nodejs
+		typescript
+		typescript-language-server
+
 	  # Formatters
 	  nixpkgs-fmt
 	  stylua

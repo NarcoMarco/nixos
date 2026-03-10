@@ -5,12 +5,12 @@ in
 {
   home.file = {
     ".config/nvim/lua" = { 
-	  source = "${configDir}/nvim/lua";
-	};
+			source = "${configDir}/nvim/lua";
+		};
 
     ".config/nvim/lsp" = { 
-	  source = "${configDir}/nvim/lsp";
-	};
+			source = "${configDir}/nvim/lsp";
+		};
 
 
     ".config/wallpapers".source = "${configDir}/wallpapers/";

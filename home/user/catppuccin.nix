@@ -9,11 +9,13 @@
       enable = false;
     };
 
-	delta.enable = false;
+		delta.enable = false;
 
-	hyprlock = {
-	  enable = false;
-	  useDefaultConfig = false;
-	};
+		hyprlock = {
+			enable = false;
+			useDefaultConfig = false;
+		};
+
+		spotify-player.enable = false;
   };
 }
