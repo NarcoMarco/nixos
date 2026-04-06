@@ -29,6 +29,13 @@
     zip
     zoxide
 
+		waydroid-helper
+		waydroid
+		cage
+
 		mesa
+
+		beeper
+		bitwarden-desktop
   ];
 }

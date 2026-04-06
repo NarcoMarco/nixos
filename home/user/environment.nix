@@ -1,5 +1,6 @@
 {
   home.sessionVariables = {
+		TZ = "Australia/Sydney";
     BROWSER = "zen-browser";
     EDITOR = "nvim";
     TERMINAL = "kitty";
@@ -20,8 +21,8 @@
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_DESKTOP = "Hyprland";
     XDG_SESSION_TYPE = "wayland";
-    GTK_USER_PORTAL = "1";
-    NIXOS_XDG_OPEN_USE_PORTAL = "1";
+		# GTK_USE_PORTAL = "0";
+		#   NIXOS_XDG_OPEN_USE_PORTAL = "0";
     XDG_CACHE_HOME = "\${HOME}/.cache";
     XDG_CONFIG_HOME = "\${HOME}/.config";
     XDG_DATA_HOME = "\${HOME}/.share";

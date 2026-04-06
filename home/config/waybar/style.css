@@ -1,0 +1,545 @@
+@define-color barCol #11111b;
+@define-color bgCol #1e1e2e;
+@define-color fgCol #b4befe;
+@define-color inactiveCol #a6adc8;
+@define-color textCol #b4befe;
+@define-color disableCol #1e1e2e;
+@define-color clickedCol #313244;
+@define-color warningCol #fab387;
+@define-color criticalCol #f38ba8;
+
+* {
+	font-family: "JetBrains Mono Nerd Font";
+}
+
+window#waybar {
+	background-color: @barCol;	
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+
+/* Left Modules */
+#workspaces {
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 5px;
+	margin-right: 2px;
+	padding: 0px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+#workspaces button {
+	font-family: "JetBrains Mono Nerd Font";
+	font-size: 100%;
+	font-weight: bold;
+	color: @textCol;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	padding: 0px;
+	padding-left: 3px;
+	padding-right: 3px;
+	border-radius: 999999px;
+}
+
+#workspaces button.active {
+	color: @bgCol;
+	background-color: @fgCol;
+}
+
+#window {
+	font-size: 100%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 999999px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#system {
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#cpu {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+#temperature {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+#memory {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+#disk {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+/* Center Modules */
+#mpris {
+	font-size: 100%;
+	font-weight: 400;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 5px;
+	padding: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+/* Right Modules */
+#tray {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+#networking {
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#network {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+#status {
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#language {
+	font-size: 100%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+#backlight {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+#pulseaudio {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+#power-profiles-daemon {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+#battery {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+#battery.warning {
+	color: @warningCol
+}
+
+#battery.critical {
+	color: @criticalCol
+}
+
+#clock {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#custom-notification {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	padding: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+}@define-color barCol #11111b;
+@define-color bgCol #1e1e2e;
+@define-color fgCol #b4befe;
+@define-color inactiveCol #a6adc8;
+@define-color textCol #b4befe;
+@define-color disableCol #1e1e2e;
+@define-color clickedCol #313244;
+@define-color warningCol #fab387;
+@define-color criticalCol #f38ba8;
+
+* {
+	font-family: "JetBrains Mono Nerd Font";
+}
+
+window#waybar {
+	background-color: @barCol;	
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+
+/* Left Modules */
+#workspaces {
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 5px;
+	margin-right: 2px;
+	padding: 0px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+#workspaces button {
+	font-family: "JetBrains Mono Nerd Font";
+	font-size: 100%;
+	font-weight: bold;
+	color: @textCol;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	padding: 0px;
+	padding-left: 3px;
+	padding-right: 3px;
+	border-radius: 999999px;
+}
+
+#workspaces button.active {
+	color: @bgCol;
+	background-color: @fgCol;
+}
+
+#window {
+	font-size: 100%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 999999px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#system {
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#cpu {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+#temperature {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+#memory {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+#disk {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+/* Center Modules */
+#mpris {
+	font-size: 100%;
+	font-weight: 400;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 5px;
+	padding: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+/* Right Modules */
+#tray {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+#networking {
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#network {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+#status {
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#language {
+	font-size: 100%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+#backlight {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+#pulseaudio {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+#power-profiles-daemon {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+#battery {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	padding: 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+#battery.warning {
+	color: @warningCol
+}
+
+#battery.critical {
+	color: @criticalCol
+}
+
+#clock {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#custom-notification {
+	font-size: 105%;
+	font-weight: 600;
+	color: @textCol;
+	background-color: @bgCol;
+	border-radius: 99999px;
+	margin: 2px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	padding: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+}

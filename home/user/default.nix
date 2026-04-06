@@ -16,5 +16,7 @@
 		./ashell.nix
 		./spicetify.nix
 		./vesktop.nix
+		./waybar.nix
+		./services.nix
   ];
 }

@@ -11,6 +11,11 @@
 
 		delta.enable = false;
 
+		cursors.enable = false;
+
+		waybar.enable = false;
+		swaync.enable = false;
+
 		hyprlock = {
 			enable = false;
 			useDefaultConfig = false;

@@ -2,7 +2,7 @@
 
 {
   boot = {
-    kernelParams = [ "ipv6.disable=1" "quiet" "splash" "vt.global_cursor_default=0" ];
+    kernelParams = [ "quiet" "splash" "vt.global_cursor_default=0" ];
     tmp.cleanOnBoot = true;
     supportedFilesystems = ["ntfs"];
     loader = {

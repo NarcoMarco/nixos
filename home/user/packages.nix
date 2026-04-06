@@ -1,40 +1,42 @@
-{ pkgs, pkgs-unstable, ...}:
+{ pkgs, pkgs-unstable, nixpkgs, ...}:
 
 {
-  home.packages = [
-    pkgs.gcc
+  home.packages = with pkgs; [
+    gcc
     (pkgs.python3.withPackages (python-pkgs: [
       python-pkgs.pip
       python-pkgs.requests
     ]))
 
-		pkgs.bottles
-		pkgs.yad
-    pkgs.obsidian
-    pkgs.vlc
-    pkgs.catppuccin
-    pkgs.catppuccin-cursors.mochaLavender
-    pkgs.catppuccin-fcitx5
-    pkgs.catppuccin-gtk
-    pkgs.catppuccin-qt5ct
-    pkgs.papirus-folders
-    pkgs.dconf-editor
-    pkgs.catimg
-    pkgs.waypaper
-    pkgs.matugen
-    pkgs.imagemagick
-    pkgs.libadwaita
-    pkgs.luarocks
-		pkgs.grimblast
-		pkgs.bitwarden-desktop
-		# pkgs.spotify
-		# pkgs.papirus-icon-theme
-		pkgs.kora-icon-theme
-		pkgs.localsend
-		pkgs.moonlight-qt
-		pkgs.calibre
-		pkgs.arduino-ide
-		pkgs.haskell.compiler.ghcHEAD
-		pkgs.cmatrix
+		bottles
+		yad
+    obsidian
+    vlc
+    catppuccin
+    catppuccin-cursors.mochaLavender
+    catppuccin-fcitx5
+    catppuccin-gtk
+    catppuccin-qt5ct
+    papirus-folders
+    dconf-editor
+    catimg
+    waypaper
+    matugen
+    imagemagick
+    libadwaita
+    luarocks
+		grimblast
+		# bitwarden-desktop
+		#spotify
+		#papirus-icon-theme
+		kora-icon-theme
+		localsend
+		moonlight-qt
+		calibre
+		arduino-ide
+		haskell.compiler.ghcHEAD
+		cmatrix
+		libreoffice
+		emacs
   ];
 }

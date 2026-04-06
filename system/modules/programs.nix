@@ -3,13 +3,20 @@
 {
   xdg.portal = {
     enable = true;
-    wlr.enable = false;
-    xdgOpenUsePortal = false;
+    wlr.enable = true;
+    # xdgOpenUsePortal = false;
     extraPortals = [
       pkgs.xdg-desktop-portal-hyprland
       pkgs.xdg-desktop-portal-gtk
     ];
+		config = {
+			preferred = {
+				default = ["gtk"];
+			};
+		};
   };
+
+	# environment.pathsToLink = [ "/share/xdg-desktop-portal" "/share/applications" ];
 
   programs = {
     steam = {

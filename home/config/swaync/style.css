@@ -1,0 +1,255 @@
+@define-color barCol 							 		 #11111b;
+@define-color bgCol                       #1e1e2e;
+@define-color hoverCol								 #45475a;
+@define-color textCol                  #b4befe;
+@define-color criticalCol							 #f38ba8;
+@define-color mycolor                  #b4befe;
+@define-color mpris-album-art-overlay  alpha(@background, 0.55);
+@define-color mpris-button-hover       alpha(@background, 0.45);
+@define-color bg-hover                 alpha(@background, 0.80);
+@define-color border-color             alpha(@mycolor, 0.18);
+
+* {
+	outline: none;	
+	box-sizing: border-box;
+}
+
+/*
+ * Stop all backgrounds from ancestors
+ * */
+
+/* Row container */
+.notification-row {
+	background: transparent;
+	padding: 0;
+	margin: 0;
+}
+
+/* EventBox wrapper */
+.notification-background {
+	background: transparent;
+}
+
+/* Floating window background layer */
+.floating-notifications.background {
+	background: transparent;
+}
+
+.notification-group {
+	background: transparent;
+}
+
+/*
+ * Floating Notifications
+ * */
+.floating-notifications .notification-row .notification-background .notification {
+	background: @bgCol;
+	box-shadow: none;
+	border: none;
+	border-radius: 25px;
+	margin: 6px;
+}
+
+/*
+ * Control Center Notifications
+ * */
+.control-center .notification-row .notification-background .notification {
+	background: @bgCol;
+	box-shadow: none;
+	border: none;
+	border-radius: 25px;
+	margin-top: 6px;
+	margin-bottom: 2px;
+}
+
+/* All inner widgets inherit border-radius so nothing pokes out */
+.notification box,
+.notification widget,
+.notification .notification-content {
+	border-radius: 25px;
+}
+
+/* Hover */
+.notification widget:hover {
+	background: @hoverCol;
+	border-radius: 25px;
+}
+
+
+/* notification content padding */
+.notification-content {
+	padding: 8px 10px;
+}
+
+/* Labels */
+.notification.low .notification-content label,
+.notification.normal .notification-content label {
+	color: @textCol;
+	padding: 4px 8px 2px 8px;
+}
+
+/* App icons */
+.notification .notification-content image {
+	background-color: transparent;
+	border-radius: 25px;
+}
+
+/* Body text color */
+.notification.low .notification-content .body,
+.notification.normal .notification-content .body {
+	color: @textCol;
+}
+
+/* Critical Urgency */
+.notification.critical .notification-content {
+    background: @criticalCol;
+}
+
+.notification.critical .notification-content .body {
+	color: @bgCol;
+}
+
+.notification.critical .notification-content label {
+	color: @bgCol;
+}
+
+/* Typography */
+.notification-content .summary {
+	font-family: "JetBrains Mono Nerd Font";
+	font-size: 16px;
+	font-weight: 800;
+	color: @textCol;
+}
+
+.notification-content .time {
+	font-family: "JetBrains Mono Nerd Font";
+	font-size: 10px;
+	font-weight: 400;
+	margin-right: 10;
+	color: @textCol;
+}
+
+.notification-content .body {
+	font-family: "JetBrains Mono Nerd Font";
+	font-size: 12px;
+	font-weight: 400;
+	margin-top: 3px;
+	color: @textCol;
+}
+
+/* Close Button */
+
+.close-button {
+	background: @barCol;
+	color: @textCol;
+}
+
+.close-button:hover {
+	background: @hoverCol;
+}
+
+/*
+ * ============================================
+ * Control Center Panel Window
+ * ============================================
+ * */
+
+.control-center {
+	background: @barCol;
+	color: @textCol;
+	border-radius: 15px;
+}
+
+/* Panel title bar */
+.widget-title {
+	color: @textCol;
+	padding: 14px 20px 6px 20px;
+	margin: 0;
+	font-size: 10px;
+	font-weight: 600;
+}
+
+/* Clear all button */
+.widget-title > button {
+	font-size: 16px;
+	font-weight: 900;
+	color: @textCol;
+	text-shadow: none;
+	background: @bgCol;
+}
+
+.widget-title > button:hover {
+	background: @hoverCol;
+}
+
+/*
+ * ===============================
+ * MPRIS widget
+ * ===============================
+ * */
+
+.widget-mpris button {
+	color: @textCol;
+}
+
+/* make inner player container fully transparent */
+
+.widget-mpris .widget-mpris-player {
+	background: transparent;
+	box-shadow: none;
+	border: none;
+	border-radius: 25px;
+	/* padding: 12px 14px; */
+	margin: 6px 14px;
+	padding: 0px;
+}
+
+.widget-mpris .widget.mpris-player * {
+	background: transparent;
+	box-shadow: none;
+	border: none;
+}
+
+.widget-mpris .widget-mpris-player .mpris-overlay {
+	/* background-color: @bgCol; */
+	/* border-radius: 25px; */
+	/* margin: 10px; */
+	background: alpha(@bgCol, 0.5);
+	margin: 0px;
+	padding: 15px;
+}
+
+.widget-mpris .widget-mpris-album-art {
+	background: white;
+	box-shadow: none;
+	border-radius: 10px;
+}
+
+.widget-mpris .widget-mpris-player button {
+	background: transparent;
+	box-shadow: none;
+	border: none;
+	color: @textCol;
+	border-radius: 25px;
+	padding: 5px 8px;
+	margin: 2px;
+}
+
+.widget-mpris .widget-mpris-player button:hover {
+	background: alpha(@hoverCol, 0.8);
+}
+
+.widget-mpris .widget-mpris-player .widget-mpris-title {
+	font-family: "JetBrains Mono Nerd Font";
+	font-weight: 700;
+	font-size: 18px;
+	color: @textCol;
+}
+
+.widget-mpris .widget-mpris-player .widget-mpris-subtitle {
+	font-family: "JetBrains Mono Nerd Font";
+	font-size: 14px;
+	color: @textCol;
+	margin-top: 2px;
+}
+

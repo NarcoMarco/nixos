@@ -21,6 +21,6 @@
     ./time.nix
     ./theme.nix
     ./users.nix
-    # ./virtualisation.nix
+    ./virtualisation.nix
   ];
 }

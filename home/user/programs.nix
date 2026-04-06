@@ -1,5 +1,7 @@
 { inputs, pkgs, ... }:
 {
+	xdg.portal.enable = true;
+
   programs.firefox = {
     enable = true;
   };

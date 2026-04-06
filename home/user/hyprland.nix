@@ -26,9 +26,11 @@
 				"waypaper --restore"
 				# "hyprpanel"
 				# "ashell"
-				"qs"
+				# "qs"
+				"waybar"
 				"hypridle"
 				"playerctld"
+				"bitwarden"
       ];
 
       env = [
@@ -138,6 +140,8 @@
 			];
 
       bind = [
+				"$mainMod_SHIFT, 201, exec, zen-beta microslop.com"
+
         "$mainMod, Return, exec, $terminal"
         "$mainMod, Space, exec, $menu"
         "$mainMod, C, exec, $calc"
