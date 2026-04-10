@@ -80,6 +80,41 @@
 					inherit inputs;
 				};
 			};
+
+			conixodesktop = lib.nixosSystem {
+				inherit system;
+				modules = [
+					./computers/conixodesktop/configuration.nix
+					mikuboot.nixosModules.default
+					catppuccin.nixosModules.catppuccin
+
+					home-manager.nixosModules.home-manager {
+						home-manager.useGlobalPkgs = true;
+						home-manager.useUserPackages = true;
+						home-manager.extraSpecialArgs = {
+							inherit pkgs-unstable;
+						};
+
+						home-manager.users.marco = {
+							_module.args = {
+								inputs = inputs;
+							};
+							imports = [
+								./home/user/shared/default.nix
+								./home/user/conixodesktop/default.nix
+								catppuccin.homeModules.catppuccin
+								zen-browser.homeModules.default
+								spicetify-nix.homeManagerModules.default
+							];
+						};
+					}
+				];
+
+				specialArgs = {
+					inherit pkgs-unstable;
+					inherit inputs;
+				};
+			};
 		};
   };
 }
