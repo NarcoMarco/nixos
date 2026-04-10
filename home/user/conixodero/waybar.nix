@@ -3,7 +3,7 @@
 	programs.waybar = {
 	  enable = true;
 
-		style = builtins.readFile ../config/waybar/style.css;
+		style = builtins.readFile ../../config/waybar/style.css;
 
 		settings.main = {
 			# "layer": "top", // Waybar at top layer

@@ -45,38 +45,41 @@
   in
   {
 
-    nixosConfigurations.conixodero = lib.nixosSystem {
-      inherit system;
-      modules = [
-        ./system/configuration.nix
-				mikuboot.nixosModules.default
-				catppuccin.nixosModules.catppuccin
+    nixosConfigurations = {
+			conixodero = lib.nixosSystem {
+				inherit system;
+				modules = [
+					./computers/conixodero/configuration.nix
+					mikuboot.nixosModules.default
+					catppuccin.nixosModules.catppuccin
 
-				home-manager.nixosModules.home-manager {
-					home-manager.useGlobalPkgs = true;
-					home-manager.useUserPackages = true;
-					home-manager.extraSpecialArgs = {
-						inherit pkgs-unstable;
-					};
-
-					home-manager.users.marco = {
-						_module.args = {
-							inputs = inputs;
+					home-manager.nixosModules.home-manager {
+						home-manager.useGlobalPkgs = true;
+						home-manager.useUserPackages = true;
+						home-manager.extraSpecialArgs = {
+							inherit pkgs-unstable;
 						};
-						imports = [
-							./home/default.nix
-							catppuccin.homeModules.catppuccin
-							zen-browser.homeModules.default
-							spicetify-nix.homeManagerModules.default
-						];
-					};
-				}
-      ];
 
-      specialArgs = {
-				inherit pkgs-unstable;
-	      inherit inputs;
-      };
-    };
+						home-manager.users.marco = {
+							_module.args = {
+								inputs = inputs;
+							};
+							imports = [
+								./home/user/shared/default.nix
+								./home/user/conixodero/default.nix
+								catppuccin.homeModules.catppuccin
+								zen-browser.homeModules.default
+								spicetify-nix.homeManagerModules.default
+							];
+						};
+					}
+				];
+
+				specialArgs = {
+					inherit pkgs-unstable;
+					inherit inputs;
+				};
+			};
+		};
   };
 }

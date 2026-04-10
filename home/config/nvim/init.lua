@@ -37,7 +37,7 @@ vim.api.nvim_set_keymap("n", "<F8>", ":tabnext<CR>", { noremap = true, silent = 
 
 vim.api.nvim_set_keymap("n", "<F10>", ":tabnew | terminal<CR>", { noremap = true, silent = true })
 
-vim.api.nvim_create_autocmd("BufEnter", { pattern = "*", command = "TSBufEnable highlight" })
+-- vim.api.nvim_create_autocmd("BufEnter", { pattern = "*", command = "TSBufEnable highlight" })
 
 -- Key mapping for opening terminal in a new tab and entering insert mode  
 vim.api.nvim_set_keymap("n", "<F10>", ":tabnew | terminal<CR>", { noremap = true, silent = true }) 

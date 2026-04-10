@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  initFile = builtins.readFile ../config/nvim/init.lua;
+  initFile = builtins.readFile ../../config/nvim/init.lua;
 in
 {
   programs.neovim = {

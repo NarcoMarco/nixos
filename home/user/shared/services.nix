@@ -6,7 +6,7 @@
 		swaync = {
 			enable = true;
 
-			style = builtins.readFile ../config/swaync/style.css;
+			style = builtins.readFile ../../config/swaync/style.css;
 
 			settings = {
 				positionX = "right";

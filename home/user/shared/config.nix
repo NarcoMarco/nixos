@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 
-let configDir = ../config;
+let configDir = ../../config;
 in
 {
   home.file = {
