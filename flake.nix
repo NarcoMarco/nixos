@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
-    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # home-manager, used for managing user configuration
     home-manager = {
@@ -49,29 +49,32 @@
       inherit system;
       modules = [
         ./system/configuration.nix
-	    mikuboot.nixosModules.default
-		  catppuccin.nixosModules.catppuccin
+				mikuboot.nixosModules.default
+				catppuccin.nixosModules.catppuccin
 
-	    home-manager.nixosModules.home-manager {
-	      home-manager.useGlobalPkgs = true;
-	      home-manager.useUserPackages = true;
+				home-manager.nixosModules.home-manager {
+					home-manager.useGlobalPkgs = true;
+					home-manager.useUserPackages = true;
+					home-manager.extraSpecialArgs = {
+						inherit pkgs-unstable;
+					};
 
-	      home-manager.users.marco = {
-			    _module.args = {
-			      inputs = inputs;
-			    };
-	        imports = [
-	          ./home/default.nix
-	          catppuccin.homeModules.catppuccin
-	    	    zen-browser.homeModules.default
-						spicetify-nix.homeManagerModules.default
-	        ];
-	      };
-	    }
+					home-manager.users.marco = {
+						_module.args = {
+							inputs = inputs;
+						};
+						imports = [
+							./home/default.nix
+							catppuccin.homeModules.catppuccin
+							zen-browser.homeModules.default
+							spicetify-nix.homeManagerModules.default
+						];
+					};
+				}
       ];
 
       specialArgs = {
-        inherit pkgs-unstable;
+				inherit pkgs-unstable;
 	      inherit inputs;
       };
     };

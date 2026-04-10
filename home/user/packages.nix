@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    gcc
+    pkgs.gcc
     (pkgs.python3.withPackages (python-pkgs: [
       python-pkgs.pip
       python-pkgs.requests
@@ -38,5 +38,6 @@
 		cmatrix
 		libreoffice
 		emacs
+		pkgs-unstable.ytmdesktop
   ];
 }

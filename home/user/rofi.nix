@@ -5,17 +5,19 @@
 
     plugins = [
       pkgs.rofi-calc
+			pkgs.rofi-emoji
     ];
 
     font = "JetBrainsMono Nerd Font 12";
 
     extraConfig = {
-      modi = "drun,run,filebrowser,calc";
+      modi = "drun,run,filebrowser,calc,emoji";
       show-icons = true;
-      display-drun = "APPS";
+      display-drun = "APP";
       display-run = "RUN";
-      display-filebrowser = "FILES";
+      display-filebrowser = "FILE";
       display-calc = "CALC";
+			display-emoji = "🤓";
       drun-display-format = "{name}";
       hover-select = false;
       scroll-method = 1;

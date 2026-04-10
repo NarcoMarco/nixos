@@ -13,6 +13,7 @@
 			spacing = 5; # Gaps between modules (4px)
 			# Choose the order of the modules
 			modules-left = [
+					"custom/os_button"
 					"hyprland/workspaces"
 					"hyprland/window"
 					"group/system"
@@ -22,7 +23,6 @@
 			];
 			modules-right = [
 				"tray"
-				"group/networking"
 				"group/status"
 				"clock"
 				"custom/notification"
@@ -31,6 +31,10 @@
 			# Module Config
 
 			# Left Modules
+			"custom/os_button" = {
+				format = "";
+				on-click = "rofi -show drun";
+			};
 			"hyprland/workspaces" = {
 				format = "{name}";
 				show-special = true;
@@ -88,10 +92,10 @@
 
 			# Centre Modules
 			"mpris" = {
-				format = "{status_icon} | {dynamic}";
-				format-stopped = "test";
-				dynamic-order = ["artist" "title"];
-				dynamic-len = 75;
+				format = "{status_icon} | {artist} - {title}";
+				format-none = "test";
+				artist-len = 20;
+				title-len = 30;
 				status-icons = {
 					"paused" = "󰐊";
 					"playing" = "⏸";
@@ -103,28 +107,6 @@
 			"tray" = {
 				icon-size = 20;
 				spacing = 10;
-			};
-
-			"group/networking" = {
-				orientation = "horizontal";
-				modules = [
-					"network"
-				];
-			};
-
-			"network" = {
-				max-length = 20;
-				format = "{ifname}";
-				format-wifi = "{icon} {essid}";
-				tooltip-format-wifi = "{icon} {essid} ({signalStrength}%)";
-				format-ethernet = "󰛳 Ethernet";
-				format-disconnected = "󰤭 Disconnected";
-				format-disabled = "󰤭 Disabled";
-				format-icons = {
-					"wifi" = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
-				};
-				on-scroll-down = "";
-				on-scroll-up = "";
 			};
 			"group/status" = {
 				orientation = "horizontal";

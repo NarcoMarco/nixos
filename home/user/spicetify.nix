@@ -12,6 +12,7 @@
 				songStats
 				volumePercentage
 				queueTime
+				spicyLyrics
 
 				
 				({
@@ -27,20 +28,6 @@
 						# The actual file name of the extension usually ends with .js
 
 						name = "quickQueue.js";
-				})
-				({
-						# The source of the extension
-						# make sure you're using the correct branch
-						# It could also be a sub-directory of the repo
-						src = pkgs.fetchFromGitHub {
-							owner = "Spikerko";
-							repo = "spicy-lyrics";
-							rev = "1b8858f94587d650255d60ff96d284f05af6440d";
-							hash = "sha256-OXb6MOtkxiwBwFcuDxxcVqBod+JfAYpVz4WXw7JYbF4=";
-						} + /builds;
-						# The actual file name of the extension usually ends with .js
-
-						name = "spicy-lyrics.mjs";
 				})
 			];
 

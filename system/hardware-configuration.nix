@@ -11,39 +11,31 @@
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
-	boot.kernelParams = [ "resume=/dev/disk/by-uuid/b6bcc3cd-a5d9-4c8f-91f4-601bdf82592e" ];
   boot.extraModulePackages = [ ];
-  boot.resumeDevice = "/dev/disk/by-uuid/b6bcc3cd-a5d9-4c8f-91f4-601bdf82592e";
-	powerManagement.enable = true;
+
+  boot.kernelParams = [ "resume=/dev/disk/by-uuid/012657ba-cb85-4499-a818-86b4ee42c334" ];
+  boot.resumeDevice = "/dev/disk/by-uuid/012657ba-cb85-4499-a818-86b4ee42c334";
+  powerManagement.enable = true;
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/5e9a6021-0433-4d1d-9b7f-59acfc2e07f5";
+    { device = "/dev/disk/by-uuid/bc3c7cbd-0e9a-4941-add8-4fd8fc197c9a";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/CD71-107D";
+    { device = "/dev/disk/by-uuid/EA48-3E05";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/d610ebc9-7976-49ab-80a1-0b6cbdccc36d";
+    { device = "/dev/disk/by-uuid/83b04f40-42f8-4b8d-8831-16f7e9ab0e56";
       fsType = "ext4";
     };
 
-  swapDevices = [
-    { 
-		  device = "/dev/disk/by-uuid/b6bcc3cd-a5d9-4c8f-91f4-601bdf82592e"; 
-		}
-  ];
-
-  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-  # (the default) this is the recommended approach. When using systemd-networkd it's
-  # still possible to use this option, but it's recommended to use it in conjunction
-  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp2s0.useDHCP = lib.mkDefault true;
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/012657ba-cb85-4499-a818-86b4ee42c334"; }
+    ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

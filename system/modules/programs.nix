@@ -40,6 +40,8 @@
 
     dconf.enable = true;
 
+		nm-applet.enable = true;
+
     nh = {
       enable = true;
       clean.enable = true;

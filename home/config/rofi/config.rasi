@@ -35,7 +35,8 @@
 @import "./rofi-font.rasi"
 
 /* ---- Load pywal colors (custom wal template) ---- */
-@import "~/.cache/wal/colors-rofi-pywal"
+// @import "~/.cache/wal/colors-rofi-pywal"
+@import "~/.cache/wal/colors-rofi-dark.rasi"
 
 /* ---- Load wallpaper ---- */
 @import "~/.cache/current_wallpaper.rasi"
@@ -144,7 +145,7 @@ button {
 }
 
 button selected {
-    background-color:             @color11;
+    background-color:             @selected-urgent-background;
     text-color:                   @foreground;
 }
 
@@ -163,7 +164,7 @@ listview {
     spacing:                      0px;
     padding:                      10px;
     margin:                       0px;
-    background-color:             @background;
+    background-color:             transparent;
     border:0px;
 }
 
@@ -179,7 +180,7 @@ element {
 }
 
 element normal.normal {
-    background-color:            inherit;
+    background-color:            @background;
     text-color:                  @foreground;
 }
 
@@ -194,7 +195,7 @@ element normal.active {
 }
 
 element selected.normal {
-    background-color:            @color11;
+    background-color:            @selected-urgent-background;
     text-color:                  @foreground;
 }
 
@@ -209,7 +210,7 @@ element selected.active {
 }
 
 element alternate.normal {
-    background-color:            inherit;
+    background-color:            @background;
     text-color:                  @foreground;
 }
 

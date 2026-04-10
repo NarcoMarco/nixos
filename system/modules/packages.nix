@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -37,5 +37,8 @@
 
 		beeper
 		bitwarden-desktop
+		openvpn
+		# pkgs-unstable.ytmdesktop
+		networkmanagerapplet
   ];
 }
