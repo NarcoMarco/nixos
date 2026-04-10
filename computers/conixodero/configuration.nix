@@ -3,7 +3,8 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../system/modules
+    ../../system/shared/default.nix
+		../../system/conixodero/default.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
