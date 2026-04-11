@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 let
   initFile = builtins.readFile ../../config/nvim/init.lua;
 in
@@ -7,6 +7,7 @@ in
     enable = true;
 
     defaultEditor = true;
+		# package = pkgs-unstable.neovim-unwrapped;
 
     extraPackages = with pkgs; [
 	  # Runtime dependencies
@@ -15,6 +16,7 @@ in
 	  gnumake
 	  gcc
 	  luajit
+		# pkgs-unstable.tree-sitter
 
 	  # Language Servers
 	  lua-language-server
@@ -44,6 +46,7 @@ in
 
 	home.packages = [
 	  pkgs.kdePackages.qtdeclarative
+		pkgs.tree-sitter
 	];
 
 }
