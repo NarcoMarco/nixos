@@ -39,5 +39,6 @@
 		libreoffice
 		emacs
 		pkgs-unstable.ytmdesktop
+		prusa-slicer
   ];
 }
