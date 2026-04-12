@@ -34,9 +34,15 @@
 			url = "github:Gerg-L/spicetify-nix";
 		};
 
+		plasma-manager = {
+			url = "github:nix-community/plasma-manager";
+			inputs.nixpkgs.follows = "nixpkgs";
+			inputs.home-manger.follows = "home-manager";
+		};
+
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, hyprland, catppuccin, zen-browser, mikuboot, spicetify-nix, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, hyprland, catppuccin, zen-browser, mikuboot, spicetify-nix, plasma-manager, ... }@inputs:
   let
     lib = nixpkgs.lib;
     system = "x86_64-linux";
@@ -91,6 +97,11 @@
 					home-manager.nixosModules.home-manager {
 						home-manager.useGlobalPkgs = true;
 						home-manager.useUserPackages = true;
+
+						home-manager.sharedModules = [
+							plasma-manager.homeModules.plasma-manager
+						];
+
 						home-manager.extraSpecialArgs = {
 							inherit pkgs-unstable;
 						};
