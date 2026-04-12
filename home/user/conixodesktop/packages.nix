@@ -40,5 +40,7 @@
 		emacs
 		pkgs-unstable.ytmdesktop
 		prusa-slicer
+		protonup-qt
+		winetricks
   ];
 }
