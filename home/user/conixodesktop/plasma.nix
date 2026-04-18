@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, pkgs-unstable, ... }:
 {
 	home.packages = with pkgs; [
 		(catppuccin-kde.override { flavour = [ "mocha" ]; accents = [ "lavender" ];})
@@ -27,7 +27,8 @@
 
 		panels = [
 			{
-				location = "bottom";
+				location = "top";
+				height = 40;
 				screen = "all";
 				widgets = [
 					{
@@ -49,21 +50,38 @@
 					"org.kde.plasma.marginseparator"
 					{
 						systemTray.items = {
-							shown = [
-								"org.kde.plasma.bluetooth"
-								"org.kde.plasma.networkmanagement"
+							hidden = [
 								"org.kde.plasma.volume"
+								"blueman"
+								"org.kde.plasma.bluetooth"
+								"org.kde.plasma.brightness"
+								"org.kde.plasma.cameraindicator"
+								"org.kde.plasma.devicenotifier"
+								"org.kde.plasma.kscreen"
+								"org.kde.plasma.keyboardlayout"
+								"org.kde.plasma.keyboardindicator"
+								"org.kde.plasma.networkmanagement"
+								"org.kde.plasma.battery"
+								"org.kde.plasma.clipboard"
+								"org.kde.plasma.inputmethod"
+								"org.kde.plasma.mediacontroller"
 								"org.kde.plasma.notifications"
+								"org.kde.plasma.weather"
 							];
 						};
 					}
+					"org.kde.plasma.networkmanagement"
+					"org.kde.plasma.bluetooth"
+					"org.kde.plasma.volume"
+					"org.kde.plasma.keyboardlayout"
+					"org.kde.plasma.notifications"
 					{
 						digitalClock = {
 							time.format = "24h";
 						};
 					}
 				];
-				hiding = "dodgewindows";
+				hiding = "none";
 			}
 		];
 	};
