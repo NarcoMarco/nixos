@@ -31,6 +31,7 @@
 				"hypridle"
 				"playerctld"
 				"bitwarden"
+				"nextcloud"
       ];
 
       env = [
@@ -238,7 +239,7 @@
       ];
 
       windowrule = [
-
+ 				"nofollowmouse, class:^(fusion360.exe)$"
       ];
 
       windowrulev2 = [

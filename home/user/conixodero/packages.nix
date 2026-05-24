@@ -36,8 +36,10 @@
 		arduino-ide
 		haskell.compiler.ghcHEAD
 		cmatrix
-		libreoffice
+		onlyoffice-desktopeditors
 		emacs
 		pkgs-unstable.ytmdesktop
+		prusa-slicer
+		nextcloud-client
   ];
 }

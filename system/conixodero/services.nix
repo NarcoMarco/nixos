@@ -8,6 +8,10 @@
 		gvfs.enable = true;
 		tumbler.enable = true;
 
+		logind.settings.Login = {
+			HandlePowerKey = "ignore";
+		};
+
 		blueman.enable = true;
 
 		tailscale = {
