@@ -13,38 +13,28 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  boot.kernelParams = [ "resume=/dev/disk/by-uuid/cb5cf247-5ccf-4c08-a0f8-a8ea7403f6f1" ];
-  boot.resumeDevice = "/dev/disk/by-uuid/cb5cf247-5ccf-4c08-a0f8-a8ea7403f6f1";
+  boot.kernelParams = [ "resume=/dev/disk/by-uuid/38a3dc6c-7903-4d07-ada5-1c36244910c3" ];
+  boot.resumeDevice = "/dev/disk/by-uuid/38a3dc6c-7903-4d07-ada5-1c36244910c3";
   powerManagement.enable = true;
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/027c98f4-865a-40ec-b73d-0d9c30136a84";
+    { device = "/dev/disk/by-uuid/e98727a3-5bca-42af-9ca7-ee3fc0342815";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/A624-1E67";
+    { device = "/dev/disk/by-uuid/AE95-9FE9";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/6b5794a5-46ba-4344-8f0b-2e48564bdf04";
+    { device = "/dev/disk/by-uuid/e9551a12-f694-4e79-8380-befd18c7dd07";
       fsType = "ext4";
     };
 
-	fileSystems."/mnt/Drive-2" =
-		{ device = "/dev/disk/by-uuid/4030be52-ca10-4d21-81fe-edd07fd12488";
-			fsType = "ext4";
-		};
-
-	fileSystems."/mnt/Drive-3" =
-		{ device = "/dev/disk/by-uuid/4d117df2-b5c7-4494-af72-5e6200576889";
-			fsType = "ext4";
-		};
-
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/cb5cf247-5ccf-4c08-a0f8-a8ea7403f6f1"; }
+    [ { device = "/dev/disk/by-uuid/38a3dc6c-7903-4d07-ada5-1c36244910c3"; }
     ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
