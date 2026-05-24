@@ -13,6 +13,7 @@
 
     dconf.enable = true;
 
+		adb.enable = true;
 # 		nm-applet.enable = true;
 
     nh = {

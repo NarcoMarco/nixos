@@ -41,6 +41,7 @@
 							launchers = [
 								"preferred://browser"
 								"applications:vesktop.desktop"
+								"applications:steam.desktop"
 								"applications:systemsettings.desktop"
 								"preferred://filemanager"
 								"applications:kitty.desktop"

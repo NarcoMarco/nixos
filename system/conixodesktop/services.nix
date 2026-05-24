@@ -15,6 +15,11 @@
 		upower.enable = true;
 		power-profiles-daemon.enable = true;
 
+		wivrn = {
+		  enable =  true;
+			package = (pkgs.wivrn.override {cudaSupport = true;});
+		};
+
 		desktopManager.plasma6.enable = true;
 		displayManager.sddm = {
 		  enable = true;
