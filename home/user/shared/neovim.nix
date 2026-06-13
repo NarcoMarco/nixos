@@ -40,7 +40,8 @@ in
 
     extraLuaPackages = luaPkgs: with luaPkgs; [ magick ];
 
-	  extraLuaConfig = initFile;
+	  # extraLuaConfig = initFile;
+		initLua = initFile;
 
   };
 

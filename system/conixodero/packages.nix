@@ -23,7 +23,7 @@
     pkg-config
     power-profiles-daemon
     wget
-    xfce.thunar
+    thunar
     xdg-desktop-portal-gtk
     xdg-desktop-portal-wlr
     zip

@@ -8,6 +8,9 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
+	nixpkgs.config.permittedInsecurePackages = [
+		"electron-39.8.10"
+	];
 
-  system.stateVersion = "25.11";
+  system.stateVersion = "26.05";
 }

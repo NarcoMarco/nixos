@@ -23,7 +23,7 @@
     pkg-config
     power-profiles-daemon
     wget
-    xfce.thunar
+    thunar
     xdg-desktop-portal-gtk
     xdg-desktop-portal-wlr
     zip
@@ -40,5 +40,6 @@
 		openvpn
 		# pkgs-unstable.ytmdesktop
 # 		networkmanagerapplet
+		android-tools
   ];
 }
