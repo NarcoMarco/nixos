@@ -41,5 +41,9 @@
 		pkgs-unstable.ytmdesktop
 		prusa-slicer
 		nextcloud-client
+		vivaldi
+		sl
+		jdk25
+		jetbrains.idea
   ];
 }

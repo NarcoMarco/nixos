@@ -2,7 +2,7 @@
   home.sessionVariables = {
 		TZ = "Australia/Sydney";
     # BROWSER = "zen-beta";
-		BROWSER = "zen-beta";
+		BROWSER = "vivaldi";
     EDITOR = "nvim";
     TERMINAL = "kitty";
     NIXOS_OZONE_WL = "1";

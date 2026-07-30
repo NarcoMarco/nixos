@@ -21,7 +21,7 @@
     wlogout
     wl-clipboard
     rofi
-    swww
+    awww
     pywal
   ];
 }

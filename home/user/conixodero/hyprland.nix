@@ -2,6 +2,7 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
+		configType = "hyprlang";
     # set the flake package
     # package = inputs.hyprland.${pkgs.stdenv.hostPlatform.system}.hyprland;
     # portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal
@@ -11,9 +12,21 @@
 
       monitor = [
         "eDP-1, 1920x1200@60, 0x0, 1"
-				"HDMI-A-1, 3840x2160@60, 0x-2160, 1, bitdepth, 10, cm, hdr"
+				# "HDMI-A-1, 3840x2160@60, 0x-2160, 1, bitdepth, 10, cm, hdr"
+				# "desc:Acer Technologies X34 X5 45180286D4200, 3440x1440@240, 1920x0, 1, bitdepth, 10, cm, hdr"
 				", preferred, auto, auto"
       ];
+
+			monitorv2 = {
+				output = "DP-2";
+				mode = "3440x1440@240";
+				position = "1920x0";
+				scale = 1;
+				bitdepth = 10;
+				cm = "hdr";
+				sdr_min_luminance = 0.005;
+				sdr_max_luminance = 250;
+			};
 
       "$mainMod" = "SUPER";
       "$terminal" = "kitty";
@@ -101,7 +114,6 @@
       };
 
       dwindle = {
-        pseudotile = false;
 				preserve_split = true;
 				force_split = 2;
 				permanent_direction_override = true;
@@ -157,7 +169,7 @@
         
         "$mainMod, E, exec, $fileManager"
         "$mainMod, P, pseudo," # dwindle
-        "$mainMod, J, togglesplit," # dwindlei
+        "$mainMod, J, layoutmsg, togglesplit" # dwindlei
         
         # focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
@@ -239,11 +251,8 @@
       ];
 
       windowrule = [
- 				"nofollowmouse, class:^(fusion360.exe)$"
-      ];
-
-      windowrulev2 = [
-        "suppressevent maximize, class:.*" # You'll probably like this.
+ 				"no_follow_mouse on, match:class ^(fusion360.exe)$"
+        "suppress_event maximize, match:class *" # You'll probably like this.
       ];
     };
   };

@@ -16,6 +16,8 @@
 		waybar.enable = false;
 		swaync.enable = false;
 
+		hyprland.enable = false;
+
 		hyprlock = {
 			enable = false;
 			useDefaultConfig = false;
