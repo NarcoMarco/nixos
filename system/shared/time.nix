@@ -1,5 +1,5 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-    time.timeZone = "Australia/Sydney";
+  time.timeZone = "Australia/Sydney";
 }
