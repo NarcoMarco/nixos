@@ -27,6 +27,7 @@ in
 	  yaml-language-server
 	  bash-language-server
 	  jdt-language-server
+		java-language-server
 		kdePackages.qtdeclarative
 
 		nodejs
@@ -44,6 +45,21 @@ in
 		initLua = initFile;
 
   };
+
+	xdg.desktopEntries.nvim-terminal = {
+		name = "Neovim";
+		exec = "kitty -e nvim %F"; # replace kitty with your terminal
+		terminal = false;
+		mimeType = [
+			"text/plain"
+			"text/x-java"
+		];
+	};
+
+	xdg.mimeApps.defaultApplications = {
+		"text/plain" = [ "nvim-terminal.desktop" ];
+		"text/x-java" = [ "nvim-terminal.desktop" ];
+	};
 
 	home.packages = [
 	  pkgs.kdePackages.qtdeclarative

@@ -17,7 +17,7 @@ vim.lsp.enable({
 	--bash
 	"bashls",
 	--java
-	"jdtls",
+	-- "jdtls",
 	--qml
 	"qmlls",
 	--typescript

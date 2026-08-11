@@ -37,7 +37,6 @@
 		haskell.compiler.ghcHEAD
 		cmatrix
 		onlyoffice-desktopeditors
-		emacs
 		pkgs-unstable.ytmdesktop
 		prusa-slicer
 		nextcloud-client
@@ -45,5 +44,6 @@
 		sl
 		jdk25
 		jetbrains.idea
+		gpclient
   ];
 }

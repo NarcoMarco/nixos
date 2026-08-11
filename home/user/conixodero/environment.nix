@@ -1,9 +1,10 @@
 {
   home.sessionVariables = {
-		TZ = "Australia/Sydney";
+		# TZ = "Australia/Sydney";
     # BROWSER = "zen-beta";
 		BROWSER = "vivaldi";
     EDITOR = "nvim";
+		VISUAL = "nvim";
     TERMINAL = "kitty";
     NIXOS_OZONE_WL = "1";
     QT_QPA_PLATFORMTHEME = "gtk3";
