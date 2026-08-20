@@ -38,11 +38,12 @@
 		cmatrix
 		libreoffice
 		emacs
-		pkgs-unstable.ytmdesktop
 		prusa-slicer
 		protonup-qt
 		winetricks
 		easyeffects
 		wineWow64Packages.stable
+		vivaldi
+		pear-desktop
   ];
 }

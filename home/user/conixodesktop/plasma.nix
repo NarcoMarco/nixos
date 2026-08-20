@@ -7,13 +7,15 @@
 	programs.plasma = {
 		enable = true;
 		workspace = {
-			colorScheme = "CatppuccinMochaLavender";
-			theme = "breeze-dark";
+			lookAndFeel = "org.magpie.exairdark.desktop";
+			wallpaper = "/home/marco/git-repos/mine/nixos/home/config/wallpapers/windows-7-official-3840x2160-13944.jpg";
+			colorScheme = "ExposeAirDark";
+			theme = "Se7enAeroStyle";
 			windowDecorations = {
-				library = "org.kde.breeze";
-				theme = "Breeze";
+				library = "org.kde.kwin.aurorae.v2";
+				theme = "__aurorae__svg__exposeairdark";
 			};
-			iconTheme = "kora";
+			iconTheme = "Windows-7";
 			cursor = {
 				theme = "miku-cursor-linux";
 				size = 32;
@@ -27,13 +29,13 @@
 
 		panels = [
 			{
-				location = "top";
+				location = "bottom";
 				height = 40;
 				screen = "all";
 				widgets = [
 					{
 						kickoff = {
-							icon = "nix-snowflake-white";
+							# icon = "nix-snowflake-white";
 						};
 					}
 					{
@@ -41,6 +43,7 @@
 							launchers = [
 								"preferred://browser"
 								"applications:vesktop.desktop"
+								"applications:com.github.th_ch.youtube_music.desktop"
 								"applications:steam.desktop"
 								"applications:systemsettings.desktop"
 								"preferred://filemanager"
