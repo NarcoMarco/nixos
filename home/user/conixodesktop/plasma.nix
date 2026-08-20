@@ -30,7 +30,7 @@
 		panels = [
 			{
 				location = "bottom";
-				height = 40;
+				height = 44;
 				screen = "all";
 				widgets = [
 					{
