@@ -153,7 +153,7 @@
 			];
 
       bind = [
-				"$mainMod_SHIFT, 201, exec, zen-beta microslop.com"
+				"$mainMod_SHIFT, 201, exec, vivaldi microslop.com"
 
         "$mainMod, Return, exec, $terminal"
         "$mainMod, Space, exec, $menu"

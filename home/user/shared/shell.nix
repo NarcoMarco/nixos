@@ -20,6 +20,7 @@
 
       shellAliases = {
         image="kitty icat";
+				anuvpn="~/ANUVPN.sh";
       };
 
       oh-my-zsh = {

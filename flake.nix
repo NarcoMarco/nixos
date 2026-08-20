@@ -16,13 +16,13 @@
     catppuccin.url = "github:catppuccin/nix/release-26.05";
 
 		# zen browser community flake
-		zen-browser = {
-			url = "github:0xc000022070/zen-browser-flake";
-			inputs = {
-				nixpkgs.follows = "nixpkgs";
-				home-manager.follows = "home-manager";
-			};
-		};
+		# zen-browser = {
+		# 	url = "github:0xc000022070/zen-browser-flake";
+		# 	inputs = {
+		# 		nixpkgs.follows = "nixpkgs";
+		# 		home-manager.follows = "home-manager";
+		# 	};
+		# };
 
 		# mikuboot
 		mikuboot = {
@@ -40,9 +40,11 @@
 			inputs.home-manager.follows = "home-manager";
 		};
 
+		globalprotect-openconnect.url = "github:yuezk/GlobalProtect-openconnect";
+
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, hyprland, catppuccin, zen-browser, mikuboot, spicetify-nix, plasma-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, globalprotect-openconnect, hyprland, catppuccin, mikuboot, spicetify-nix, plasma-manager, ... }@inputs:
   let
     lib = nixpkgs.lib;
     system = "x86_64-linux";
@@ -58,6 +60,11 @@
 					./computers/conixodero/configuration.nix
 					mikuboot.nixosModules.default
 					catppuccin.nixosModules.catppuccin
+					{
+						environment.systemPackages = [
+							globalprotect-openconnect.packages.${system}.default
+						];
+					}
 
 					home-manager.nixosModules.home-manager {
 						home-manager.useGlobalPkgs = true;
@@ -74,7 +81,7 @@
 								./home/user/shared/default.nix
 								./home/user/conixodero/default.nix
 								catppuccin.homeModules.catppuccin
-								zen-browser.homeModules.default
+								# zen-browser.homeModules.default
 								spicetify-nix.homeManagerModules.default
 							];
 						};
@@ -114,7 +121,7 @@
 								./home/user/shared/default.nix
 								./home/user/conixodesktop/default.nix
 								catppuccin.homeModules.catppuccin
-								zen-browser.homeModules.default
+								# zen-browser.homeModules.default
 								spicetify-nix.homeManagerModules.default
 							];
 						};

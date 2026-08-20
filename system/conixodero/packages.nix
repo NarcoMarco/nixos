@@ -41,5 +41,7 @@
 		# pkgs-unstable.ytmdesktop
 		networkmanagerapplet
 		gst_all_1.gst-plugins-base
+		bat
+		iptables
   ];
 }
