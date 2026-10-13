@@ -2,6 +2,26 @@
 
 {
   programs = {
+		nix-ld.enable = true;
+		nix-ld.libraries = with pkgs; [
+			stdenv.cc.cc.lib
+			zlib
+			libGL
+			glib
+			libxcb
+			libx11
+			libxext
+			libxrender
+			libsm
+			libice
+			zstd
+			openssl
+			curl
+			bzip2
+			libxml2
+			xz
+		];
+
     steam = {
       enable = true;
       remotePlay.openFirewall = true;

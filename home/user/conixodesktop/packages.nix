@@ -8,6 +8,8 @@
       python-pkgs.requests
     ]))
 
+		python3Packages.transformers
+
 		bottles
 		yad
     obsidian
@@ -45,5 +47,6 @@
 		wineWow64Packages.stable
 		vivaldi
 		pear-desktop
+		heroic
   ];
 }

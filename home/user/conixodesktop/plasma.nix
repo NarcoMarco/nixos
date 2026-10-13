@@ -44,6 +44,7 @@
 								"preferred://browser"
 								"applications:vesktop.desktop"
 								"applications:com.github.th_ch.youtube_music.desktop"
+								"applications:spotify.desktop"
 								"applications:steam.desktop"
 								"applications:systemsettings.desktop"
 								"preferred://filemanager"

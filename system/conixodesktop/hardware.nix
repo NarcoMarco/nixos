@@ -6,6 +6,7 @@
 
     graphics.enable = true;
     nvidia.open = true;
+		nvidia.modesetting.enable = true;
   };
 
   services.xserver.videoDrivers = [ "nvidia" ];

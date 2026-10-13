@@ -4,6 +4,7 @@
 	  enable = true;
 		settings = {
 		  enableSplashScreen = false;
+			arRPC = true;
 		};
 	};
 }

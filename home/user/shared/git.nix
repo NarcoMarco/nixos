@@ -19,6 +19,13 @@ in
 			};
 		}
 		{
+			condition = "gitdir:~/Games/";
+			contents.user = {
+				email = "marcocondipodero@gmail.com";
+				name = "Marco";
+			};
+		}
+		{
 			condition = "gitdir:~/Documents/";
 			contents.user = {
 				email = "u8494294@anu.edu.au";

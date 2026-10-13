@@ -41,5 +41,8 @@
 		# pkgs-unstable.ytmdesktop
 # 		networkmanagerapplet
 		android-tools
+		# comfy-ui-cuda
+
+		uv
   ];
 }
