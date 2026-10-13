@@ -11,6 +11,9 @@
       experimental-features = [ "nix-command" "flakes" ];
       auto-optimise-store = true;
       substituters = ["https://nix-gaming.cachix.org"];
+			trusted-users = [
+				"marco"
+			];
     };
 
     # gc = {
