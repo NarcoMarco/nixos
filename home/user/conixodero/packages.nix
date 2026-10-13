@@ -45,5 +45,6 @@
 		jdk25
 		jetbrains.idea
 		gpclient
+		pkgs-unstable.catgirldownloader
   ];
 }
